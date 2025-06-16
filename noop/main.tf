@@ -1,8 +1,8 @@
-resource "null_resource" "noop" {
-  triggers = {
-    noop_var = var.noop_var
-  }
-}
+# resource "null_resource" "noop" {
+#   triggers = {
+#     noop_var = var.noop_var
+#   }
+# }
 
 resource "local_file" "file" {
   filename = "${path.module}/noop.txt"
