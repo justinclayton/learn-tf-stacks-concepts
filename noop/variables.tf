@@ -1,0 +1,1 @@
+variable "noop_var" {}
