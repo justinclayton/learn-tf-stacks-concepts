@@ -6,6 +6,7 @@ variable "my_variable" {
 variable "deployment_name" {
   description = "The name of the deployment"
   type        = string
+  default     = "this was not provided"
 }
 
 resource "random_string" "string" {
@@ -22,6 +23,6 @@ resource "null_resource" "this" {
   }
 
   provisioner "local-exec" {
-    command = "echo my_variable: ${var.my_variable}; random_string: ${random_string.string.result}"
+    command = "echo my_variable: ${var.my_variable}, deployment_name: ${var.deployment_name}, random_string: ${random_string.string.result}"
   }
 }
