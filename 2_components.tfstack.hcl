@@ -9,7 +9,6 @@ component "hello-world" {
 
   providers = {
     random = provider.random.this
-    null   = provider.null.this
   }
 
   ## Inputs to the component (i.e., passing in variables to the Terraform module).

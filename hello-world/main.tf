@@ -16,13 +16,12 @@ resource "random_string" "string" {
   lower   = true
 }
 
-resource "null_resource" "this" {
-  triggers = {
-    my_variable   = var.my_variable
-    random_string = random_string.string.result
-  }
-
-  provisioner "local-exec" {
-    command = "echo my_variable: ${var.my_variable}, deployment_name: ${var.deployment_name}, random_string: ${random_string.string.result}"
-  }
+output "my_variable" {
+  value = var.my_variable
+}
+output "deployment_name" {
+  value = var.deployment_name
+}
+output "random_string" {
+  value = random_string.string.result
 }
