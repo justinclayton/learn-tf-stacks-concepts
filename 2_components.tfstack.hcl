@@ -16,3 +16,18 @@ component "hello-world" {
     my_variable = "oh hai mark, i mean world"
   }
 }
+
+output "my_variable" {
+  value = component.hello-world.my_variable
+  type  = string
+}
+
+output "deployment_name" {
+  value = component.hello-world.deployment_name
+  type  = string
+}
+
+output "random_string" {
+  value = component.hello-world.random_string
+  type  = string
+}

@@ -16,3 +16,11 @@ deployment "production" {
     deployment_name = "production" # WHERE DO THESE GO?
   }
 }
+
+publish_output "staging_deployment_name" {
+  value = deployment.staging.deployment_name
+}
+
+publish_output "production_random_string" {
+  value = deployment.production.random_string
+}
