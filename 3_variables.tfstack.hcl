@@ -1,4 +1,4 @@
-## Just stabbing in the dark here
+## Akin to "root module" variables
 
 variable "deployment_name" {
   description = "The name of the deployment"

@@ -13,17 +13,13 @@ component "hello-world" {
 
   ## Inputs to the component (i.e., passing in variables to the Terraform module).
   inputs = {
-    my_variable = "oh hai mark, i mean world"
+    string_prefix   = "hello world"
+    deployment_name = var.deployment_name
   }
 }
 
-output "my_variable" {
-  value = component.hello-world.my_variable
-  type  = string
-}
-
-output "deployment_name" {
-  value = component.hello-world.deployment_name
+output "rendered_string" {
+  value = component.hello-world.rendered_string
   type  = string
 }
 

@@ -1,4 +1,4 @@
-variable "my_variable" {
+variable "string_prefix" {
   description = "The value of this variable"
   type        = string
 }
@@ -16,12 +16,14 @@ resource "random_string" "string" {
   lower   = true
 }
 
-output "my_variable" {
-  value = var.my_variable
+locals {
+  rendered_string = "${var.string_prefix}: ${var.deployment_name}"
 }
-output "deployment_name" {
-  value = var.deployment_name
+
+output "rendered_string" {
+  value = local.rendered_string
 }
+
 output "random_string" {
   value = random_string.string.result
 }
