@@ -13,7 +13,9 @@ component "hello-world" {
 
   ## Inputs to the component (i.e., passing in variables to the Terraform module).
   inputs = {
-    string_prefix   = "hello world"
+    string_prefix = "hello world"
+    # take value of *stack variable* (declared in *tfstack.hcl, value defined in *tfdeploy.hcl)
+    # and pass it into *component variable* (declared in hello-world/variables.tf, value defined here)
     deployment_name = var.deployment_name
   }
 }
